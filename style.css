@@ -1,70 +1,16 @@
-.btn-whats{
-  background:#25D366;
-  color:white;
-  padding:14px 28px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:bold;
-  display:inline-block;
-  transition:.3s;
-}
-.btn-whats:hover{
-  transform:scale(1.05);
-}
 
-body{font-family:Arial;margin:0;text-align:center;background:#f2f5f9}
-.header{background:#0b3d5c;color:#fff;padding:20px}
-nav a{color:#fff;margin:0 10px}
-.hero{padding:60px;background:#0e6ba8;color:#fff}
-.btn{background:#f6b000;padding:10px 20px;color:#000;border-radius:8px}
-.galeria{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;padding:20px}
-.galeria img{width:100%;height:200px;object-fit:cover;border-radius:10px}
-/* BOTÃO WHATSAPP FLUTUANTE */
-.whatsapp-float{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    color:white;
-    font-size:26px;
-    width:60px;
-    height:60px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    text-decoration:none;
-    box-shadow:0 6px 15px rgba(0,0,0,0.3);
-    z-index:999;
-    transition:0.2s;
-}
-
-.whatsapp-float:hover{
-    transform:scale(1.1);
-}.fade{
-opacity:0;
-transform:translateY(20px);
-animation:fade 1s forwards;
-}
-
-@keyframes fade{
-to{
-opacity:1;
-transform:translateY(0);
-}
-}/* ANIMAÇÃO SUAVE */
-.fade{
-  opacity:0;
-  transform:translateY(20px);
-  animation:fade 0.8s ease forwards;
-}
-
-@keyframes fade{
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-class="fade"
-
-
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f6f8fb}
+nav{background:#0b3d91;padding:18px;text-align:center;position:sticky;top:0}
+nav a{color:#fff;text-decoration:none;margin:0 14px;font-weight:bold}
+.whats-btn{background:#25d366;padding:10px 16px;border-radius:8px}
+.hero{background:linear-gradient(90deg,#0b3d91,#1e90ff);color:#fff;text-align:center;padding:100px 20px}
+.cta{background:#ffc107;color:#000;padding:14px 26px;border-radius:8px;text-decoration:none;font-weight:bold}
+section{padding:60px 20px;max-width:1100px;margin:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:#fff;padding:25px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,.08)}
+footer{background:#0b3d91;color:#fff;text-align:center;padding:25px;margin-top:50px}
+.gallery img{width:100%;border-radius:10px}
+.filter-btns{text-align:center;margin-bottom:30px}
+.filter-btns button{margin:6px;padding:8px 14px;border:none;border-radius:6px;cursor:pointer;background:#ddd}
+.map{width:100%;height:350px;border-radius:12px}
