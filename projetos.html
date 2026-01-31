@@ -2,138 +2,85 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projetos | Especialista Solar</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="style.css" />
+<title>Projetos | Especialista Solar</title>
+<link rel="stylesheet" href="style.css">
 
-  <style>
-    body{
-      font-family: Arial, Helvetica, sans-serif;
-      background:#f6f8fb;
-      margin:0;
-    }
+<style>
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f6f8fb;
+    margin:0;
+}
 
-    header{
-      background: linear-gradient(90deg,#0b3d91,#d4af37);
-      color:white;
-      text-align:center;
-      padding:40px 20px;
-    }
+header{
+    background: linear-gradient(90deg,#0b3d91,#d4af37);
+    color:white;
+    padding:25px;
+    text-align:center;
+}
 
-    h1{
-      margin:0;
-      font-size:32px;
-    }
+.galeria{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+    padding:30px;
+}
 
-    .galeria{
-      max-width:1200px;
-      margin:40px auto;
-      padding:20px;
+.galeria img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+    transition:0.3s;
+    cursor:pointer;
+}
 
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:20px;
-    }
-
-    .foto{
-      overflow:hidden;
-      border-radius:16px;
-      box-shadow:0 8px 20px rgba(0,0,0,0.15);
-      cursor:pointer;
-      background:white;
-    }
-
-    .foto img{
-      width:100%;
-      height:220px;
-      object-fit:cover;
-      transition:0.4s;
-    }
-
-    .foto:hover img{
-      transform:scale(1.08);
-    }
-
-    footer{
-      text-align:center;
-      padding:25px;
-      background:#111;
-      color:white;
-      margin-top:40px;
-    }
-
-    /* Lightbox */
-    .lightbox{
-      display:none;
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,0.9);
-      justify-content:center;
-      align-items:center;
-      z-index:999;
-    }
-
-    .lightbox img{
-      max-width:90%;
-      max-height:90%;
-      border-radius:12px;
-    }
-  </style>
+.galeria img:hover{
+    transform:scale(1.05);
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>⚡ Nossos Projetos Solares</h1>
-  <p>Instalações reais feitas pela Especialista Solar</p>
+<h1>⚡ Nossos Projetos Solares</h1>
+<p>Instalações reais feitas pela Especialista Solar</p>
 </header>
-
 
 <section class="galeria" id="galeria"></section>
 
-
-<div class="lightbox" id="lightbox" onclick="fechar()">
-  <img id="imgGrande">
-</div>
-
-
-<footer>
-  © 2026 Especialista Solar • Energia limpa e economia garantida
-</footer>
-
-
 <script>
-  // 👉 COLOQUE AQUI O NOME DAS SUAS FOTOS
-  const imagens = [
-    "img/projeto-01.jpg",
-    "img/projeto-02.jpg",
-    "img/projeto-03.jpg",
-    "img/projeto-04.jpg",
-    "img/projeto-05.jpg",
-    "img/projeto-06.jpg"
-  ];
+const galeria = document.getElementById("galeria");
 
-  const galeria = document.getElementById("galeria");
+/*
+    ALTERE AQUI SE QUISER MAIS OU MENOS LIMITE
+*/
+const maxImagens = 50;
 
-  imagens.forEach(src => {
-    const div = document.createElement("div");
-    div.className = "foto";
+for(let i=1;i<=maxImagens;i++){
 
-    div.innerHTML = `<img src="${src}" onclick="abrir('${src}')">`;
+    const numero = String(i).padStart(2,'0');
 
-    galeria.appendChild(div);
-  });
+    const formatos = [
+        `img/projeto-${numero}.jpg`,
+        `img/projeto-${numero}.jpeg`,
+        `img/projeto-${numero}.png`
+    ];
 
-  function abrir(src){
-    document.getElementById("lightbox").style.display="flex";
-    document.getElementById("imgGrande").src=src;
-  }
+    formatos.forEach(src=>{
+        const img = new Image();
+        img.src = src;
 
-  function fechar(){
-    document.getElementById("lightbox").style.display="none";
-  }
+        img.onload = ()=>{
+            galeria.appendChild(img);
+        }
+    });
+}
 </script>
 
 </body>
