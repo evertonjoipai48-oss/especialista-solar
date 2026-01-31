@@ -1,10 +1,4 @@
-
-<!DOCTYPE html><a class="btn-whats" 
-   href="https://wa.me/5566992545753?text=Olá%20vim%20pelo%20site%20Especialista%20Solar"
-   target="_blank">
-   💬 Falar no WhatsApp
-</a>
-
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
@@ -13,206 +7,182 @@
 <title>Contato | Especialista Solar</title>
 
 <style>
+
 body{
-    font-family: Arial, Helvetica, sans-serif;
     margin:0;
-    background:#f2f6fb;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f2f6fa;
 }
 
 /* HEADER */
 header{
-    background:linear-gradient(90deg,#0b3d91,#d4af37);
+    background:linear-gradient(90deg,#0b3d91,#1da4d7);
     color:white;
     text-align:center;
-    padding:45px 20px;
+    padding:40px 20px;
 }
 
 header h1{
     margin:0;
-    font-size:32px;
+    font-size:34px;
 }
 
 /* CONTAINER */
 .container{
-    max-width:1000px;
-    margin:40px auto;
-    padding:20px;
+    max-width:1100px;
+    margin:auto;
+    padding:40px 20px;
 }
 
 /* GRID */
 .grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:25px;
+    gap:30px;
 }
 
+@media(max-width:900px){
+    .grid{
+        grid-template-columns:1fr;
+    }
+}
+
+/* CARD */
 .card{
     background:white;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 6px 20px rgba(0,0,0,0.12);
+    padding:28px;
+    border-radius:14px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
-/* INPUTS */
+/* WHATSAPP BUTTON */
+.btn-whats{
+    background:#25D366;
+    color:white;
+    padding:14px 22px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+    display:inline-block;
+    margin-top:10px;
+    transition:0.2s;
+}
+
+.btn-whats:hover{
+    transform:scale(1.05);
+}
+
+/* FORM */
 input, textarea{
     width:100%;
     padding:12px;
     margin:8px 0;
     border-radius:8px;
-    border:1px solid #ccc;
-    font-size:15px;
+    border:1px solid #ddd;
 }
 
-/* BUTTON */
 button{
-    width:100%;
-    padding:14px;
-    background:#0b3d91;
-    color:white;
-    border:none;
-    border-radius:8px;
+    background:#f7b500;
+    color:black;
     font-weight:bold;
+    border:none;
+    padding:14px;
+    width:100%;
+    border-radius:10px;
     cursor:pointer;
     font-size:16px;
-}
-
-button:hover{
-    background:#d4af37;
-}
-
-/* WHATS */
-.whats-btn{
-    display:block;
-    background:#25D366;
-    color:white;
-    text-align:center;
-    padding:18px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:bold;
-    font-size:18px;
-    margin-top:15px;
-}
-
-.whats-btn:hover{
-    transform:scale(1.03);
 }
 
 /* MAP */
 iframe{
     width:100%;
-    height:320px;
-    border-radius:10px;
-    border:0;
+    height:350px;
+    border-radius:12px;
 }
 
-/* FLOAT BUTTON */
-.float-whats{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    color:white;
-    padding:15px 18px;
-    border-radius:50px;
+/* FOOTER */
+.voltar{
+    display:block;
+    text-align:center;
+    margin-top:35px;
     font-weight:bold;
     text-decoration:none;
-    box-shadow:0 6px 20px rgba(0,0,0,0.3);
+    color:#0b3d91;
 }
 
-/* MOBILE */
-@media(max-width:800px){
-    .grid{
-        grid-template-columns:1fr;
-    }
-}
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>⚡ Fale com o Especialista Solar</h1>
-<p>Orçamento gratuito • Atendimento rápido • Energia mais barata</p>
+    <h1>☀️ Especialista Solar</h1>
+    <p>Everton Joi • Barra do Garças – MT</p>
 </header>
 
 <div class="container">
 
 <div class="grid">
 
-<!-- FORM -->
-<div class="card">
-<h2>Solicitar Orçamento</h2>
+    <!-- CONTATO DIRETO -->
+    <div class="card">
+        <h2>📞 Fale direto comigo</h2>
 
-<input type="text" id="nome" placeholder="Seu nome">
-<input type="text" id="cidade" placeholder="Sua cidade">
-<input type="tel" id="telefone" placeholder="Telefone">
+        <p><b>Telefone / WhatsApp:</b><br>
+        <a href="tel:+5566992545753">(66) 99254-5753</a></p>
 
-<textarea id="msg" placeholder="Conte sua necessidade..."></textarea>
+        <p><b>Email:</b><br>
+        <a href="mailto:evertonjoipai48@gmail.com">
+        evertonjoipai48@gmail.com
+        </a></p>
 
-<button onclick="enviarWhats()">Enviar pelo WhatsApp</button>
+        <a class="btn-whats"
+           href="https://wa.me/5566992545753?text=Olá%20vim%20pelo%20site%20Especialista%20Solar%20e%20quero%20um%20orçamento%20de%20energia%20solar"
+           target="_blank">
+           💬 Chamar no WhatsApp agora
+        </a>
 
-<a id="whatsDireto" class="whats-btn" target="_blank">
-💬 Falar direto no WhatsApp
-</a>
+        <p style="margin-top:20px">
+        ✔ Orçamento gratuito<br>
+        ✔ Economia de até 95% na conta<br>
+        ✔ Atendimento rápido
+        </p>
+    </div>
 
-<p style="margin-top:15px;">
-📞 <a href="tel:+5566992545753>Ligar agora</a><br>
-✉️ especialista@solar.com
-</p>
 
-<a href="index.html">⬅ Voltar para início</a>
+    <!-- FORMULÁRIO -->
+    <div class="card">
+        <h2>📋 Solicitar orçamento</h2>
+
+        <form action="https://formsubmit.co/evertonjoipai48@gmail.com" method="POST">
+
+            <input type="text" name="nome" placeholder="Seu nome" required>
+            <input type="tel" name="telefone" placeholder="Telefone / WhatsApp" required>
+            <input type="text" name="cidade" placeholder="Cidade">
+            <textarea name="mensagem" rows="4" placeholder="Descreva seu consumo ou dúvida"></textarea>
+
+            <button type="submit">Enviar pedido</button>
+
+        </form>
+    </div>
+
 </div>
+
 
 <!-- MAPA -->
-<div class="card">
-<h2>Nossa Localização</h2>
+<div class="card" style="margin-top:30px">
+    <h2>📍 Atendimento em Barra do Garças – MT</h2>
 
-<!-- 🔴 TROQUE A CIDADE AQUI -->
-<iframe 
-src="https://www.google.com/maps?q=Barra+do+Garças+MT&output=embed">
-</iframe>
-
-<p style="margin-top:10px;">
-Atendemos toda a região com instalação residencial, rural e empresarial.
-</p>
+    <iframe
+    src="https://maps.google.com/maps?q=Barra%20do%20Garças%20MT&t=&z=13&ie=UTF8&iwloc=&output=embed">
+    </iframe>
 </div>
 
+<a href="index.html" class="voltar">← Voltar ao início</a>
+
 </div>
-</div>
-
-<!-- BOTÃO FLUTUANTE -->
-<a id="whatsFloat" class="float-whats" target="_blank">
-💬 WhatsApp
-</a>
-
-<script>
-const numero = "5566992545753; // 🔴 COLOQUE SEU WHATSAPP
-
-const linkDireto = `https://wa.me/${numero}?text=Olá! Quero orçamento de energia solar.`;
-
-document.getElementById("whatsDireto").href = linkDireto;
-document.getElementById("whatsFloat").href = linkDireto;
-
-function enviarWhats(){
-
-const nome = document.getElementById("nome").value;
-const cidade = document.getElementById("cidade").value;
-const telefone = document.getElementById("telefone").value;
-const msg = document.getElementById("msg").value;
-
-const texto =
-`Olá! Me chamo ${nome}
-Cidade: ${cidade}
-Telefone: ${telefone}
-Mensagem: ${msg}
-Quero orçamento de energia solar.`;
-
-const link = `https://wa.me/$5566992545753}?text=${encodeURIComponent(texto)}`;
-
-window.open(link,'_blank');
-}
-</script>
 
 </body>
 </html>
+
+
