@@ -1,3 +1,16 @@
+.btn-whats{
+  background:#25D366;
+  color:white;
+  padding:14px 28px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+  display:inline-block;
+  transition:.3s;
+}
+.btn-whats:hover{
+  transform:scale(1.05);
+}
 
 body{font-family:Arial;margin:0;text-align:center;background:#f2f5f9}
 .header{background:#0b3d5c;color:#fff;padding:20px}
