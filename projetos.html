@@ -8,6 +8,7 @@
 <title>Projetos | Especialista Solar</title>
 
 <style>
+
 body{
   margin:0;
   font-family:Arial;
@@ -28,88 +29,103 @@ header a{
   font-weight:bold;
 }
 
-/* TITULO */
+/* TÍTULO */
 h1{
   text-align:center;
-  margin:40px 0 10px;
+  margin:40px 0;
   color:#0b3d91;
 }
 
 /* FILTROS */
 .filtros{
   text-align:center;
-  margin:30px 0;
+  margin-bottom:30px;
 }
 
 .filtros button{
-  padding:10px 18px;
   border:none;
+  padding:10px 18px;
+  margin:6px;
   border-radius:20px;
-  margin:5px;
-  cursor:pointer;
   background:#ddd;
+  cursor:pointer;
   font-weight:bold;
-  transition:.3s;
 }
 
-.filtros button:hover,
 .filtros .ativo{
   background:#0b3d91;
   color:white;
 }
 
-/* GRID */
+/* MASONRY GRID */
 .galeria{
+  column-count:3;
+  column-gap:15px;
   max-width:1200px;
   margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
-  padding:20px;
+  padding:10px;
+}
+
+@media(max-width:900px){
+  .galeria{ column-count:2; }
+}
+@media(max-width:600px){
+  .galeria{ column-count:1; }
 }
 
 .item{
-  overflow:hidden;
-  border-radius:14px;
+  break-inside:avoid;
+  margin-bottom:15px;
   cursor:pointer;
-  box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
 .item img{
   width:100%;
-  height:220px;
-  object-fit:cover;
-  transition:.4s;
+  border-radius:14px;
+  transition:.3s;
 }
 
 .item:hover img{
-  transform:scale(1.1);
+  transform:scale(1.03);
 }
 
-/* MODAL */
-.modal{
+/* LIGHTBOX */
+.lightbox{
   display:none;
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.9);
+  background:rgba(0,0,0,.95);
   justify-content:center;
   align-items:center;
   z-index:999;
 }
 
-.modal img{
+.lightbox img{
   max-width:90%;
   max-height:90%;
 }
 
-.fechar{
+.arrow{
   position:absolute;
-  top:25px;
-  right:40px;
-  color:white;
+  top:50%;
   font-size:40px;
+  color:white;
+  cursor:pointer;
+  padding:20px;
+}
+
+.left{ left:10px; }
+.right{ right:10px; }
+
+.close{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:40px;
+  color:white;
   cursor:pointer;
 }
+
 </style>
 </head>
 
@@ -119,9 +135,8 @@ h1{
 <a href="index.html">⬅ Voltar ao início</a>
 </header>
 
-<h1>Galeria de Projetos</h1>
+<h1>Projetos Realizados</h1>
 
-<!-- FILTROS -->
 <div class="filtros">
 <button class="ativo" onclick="filtrar('todos',this)">Todos</button>
 <button onclick="filtrar('residencial',this)">Residencial</button>
@@ -129,53 +144,68 @@ h1{
 <button onclick="filtrar('rural',this)">Rural</button>
 </div>
 
-<!-- GALERIA -->
-<div class="galeria">
 
-<!-- TROQUE as categorias como quiser -->
-<div class="item residencial"><img src="img/1.jpg"></div>
-<div class="item residencial"><img src="img/2.jpg"></div>
-<div class="item comercial"><img src="img/3.jpg"></div>
-<div class="item comercial"><img src="img/4.jpg"></div>
-<div class="item rural"><img src="img/5.jpg"></div>
-<div class="item rural"><img src="img/6.jpg"></div>
+<div class="galeria" id="galeria">
+
+<!-- 🔥 COLOQUE SUAS IMAGENS AQUI -->
+<div class="item residencial"><img loading="lazy" src="img/1.jpg"></div>
+<div class="item residencial"><img loading="lazy" src="img/2.jpg"></div>
+<div class="item comercial"><img loading="lazy" src="img/3.jpg"></div>
+<div class="item comercial"><img loading="lazy" src="img/4.jpg"></div>
+<div class="item rural"><img loading="lazy" src="img/5.jpg"></div>
+<div class="item rural"><img loading="lazy" src="img/6.jpg"></div>
 
 </div>
 
-<!-- MODAL -->
-<div class="modal" id="modal">
-<span class="fechar" onclick="fechar()">×</span>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+<span class="close" onclick="fechar()">×</span>
+<span class="arrow left" onclick="mudar(-1)">❮</span>
 <img id="imgGrande">
+<span class="arrow right" onclick="mudar(1)">❯</span>
 </div>
+
 
 <script>
 
-/* FILTRO */
+let imagens = [...document.querySelectorAll('.item img')];
+let indexAtual = 0;
+
 function filtrar(cat,btn){
   document.querySelectorAll('.item').forEach(el=>{
-    el.style.display = (cat==='todos' || el.classList.contains(cat)) ? 'block' : 'none';
+    el.style.display = (cat==='todos'||el.classList.contains(cat))?'block':'none';
   });
 
   document.querySelectorAll('.filtros button').forEach(b=>b.classList.remove('ativo'));
   btn.classList.add('ativo');
 }
 
-/* MODAL */
-const modal = document.getElementById('modal');
+const lightbox = document.getElementById('lightbox');
 const imgGrande = document.getElementById('imgGrande');
 
-document.querySelectorAll('.item img').forEach(img=>{
+imagens.forEach((img,i)=>{
   img.onclick = ()=>{
-    imgGrande.src = img.src;
-    modal.style.display = 'flex';
+    indexAtual=i;
+    abrir();
   }
 });
 
-function fechar(){
-  modal.style.display='none';
+function abrir(){
+  imgGrande.src = imagens[indexAtual].src;
+  lightbox.style.display='flex';
 }
 
-modal.onclick = ()=> fechar();
+function fechar(){
+  lightbox.style.display='none';
+}
+
+function mudar(dir){
+  indexAtual += dir;
+  if(indexAtual<0) indexAtual=imagens.length-1;
+  if(indexAtual>=imagens.length) indexAtual=0;
+  abrir();
+}
 
 </script>
 
