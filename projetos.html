@@ -1,23 +1,140 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projetos | Especialista Solar</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background:#f6f8fb;
+      margin:0;
+    }
+
+    header{
+      background: linear-gradient(90deg,#0b3d91,#d4af37);
+      color:white;
+      text-align:center;
+      padding:40px 20px;
+    }
+
+    h1{
+      margin:0;
+      font-size:32px;
+    }
+
+    .galeria{
+      max-width:1200px;
+      margin:40px auto;
+      padding:20px;
+
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+
+    .foto{
+      overflow:hidden;
+      border-radius:16px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.15);
+      cursor:pointer;
+      background:white;
+    }
+
+    .foto img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      transition:0.4s;
+    }
+
+    .foto:hover img{
+      transform:scale(1.08);
+    }
+
+    footer{
+      text-align:center;
+      padding:25px;
+      background:#111;
+      color:white;
+      margin-top:40px;
+    }
+
+    /* Lightbox */
+    .lightbox{
+      display:none;
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.9);
+      justify-content:center;
+      align-items:center;
+      z-index:999;
+    }
+
+    .lightbox img{
+      max-width:90%;
+      max-height:90%;
+      border-radius:12px;
+    }
+  </style>
 </head>
+
 <body>
-<h1>Projetos Realizados</h1>
-<div class="galeria" id="galeria"></div>
+
+<header>
+  <h1>⚡ Nossos Projetos Solares</h1>
+  <p>Instalações reais feitas pela Especialista Solar</p>
+</header>
+
+
+<section class="galeria" id="galeria"></section>
+
+
+<div class="lightbox" id="lightbox" onclick="fechar()">
+  <img id="imgGrande">
+</div>
+
+
+<footer>
+  © 2026 Especialista Solar • Energia limpa e economia garantida
+</footer>
+
 
 <script>
-const g=document.getElementById('galeria');
-for(let i=1;i<=30;i++){
- let img=document.createElement('img');
- img.src='img/'+i+'.jpg';
- img.onerror=()=>img.remove();
- g.appendChild(img);
-}
+  // 👉 COLOQUE AQUI O NOME DAS SUAS FOTOS
+  const imagens = [
+    "img/projeto-01.jpg",
+    "img/projeto-02.jpg",
+    "img/projeto-03.jpg",
+    "img/projeto-04.jpg",
+    "img/projeto-05.jpg",
+    "img/projeto-06.jpg"
+  ];
+
+  const galeria = document.getElementById("galeria");
+
+  imagens.forEach(src => {
+    const div = document.createElement("div");
+    div.className = "foto";
+
+    div.innerHTML = `<img src="${src}" onclick="abrir('${src}')">`;
+
+    galeria.appendChild(div);
+  });
+
+  function abrir(src){
+    document.getElementById("lightbox").style.display="flex";
+    document.getElementById("imgGrande").src=src;
+  }
+
+  function fechar(){
+    document.getElementById("lightbox").style.display="none";
+  }
 </script>
 
-<a href="index.html">Voltar</a>
 </body>
 </html>
