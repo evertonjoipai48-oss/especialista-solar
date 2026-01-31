@@ -1,1 +1,140 @@
-<h1>Contato WhatsApp</h1><a href='index.html'>Voltar</a>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contato | Especialista Solar</title>
+
+<style>
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    background:#f6f8fb;
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(90deg,#0b3d91,#d4af37);
+    color:white;
+    padding:40px 20px;
+    text-align:center;
+}
+
+header h1{
+    margin:0;
+    font-size:32px;
+}
+
+/* CONTAINER */
+.container{
+    max-width:600px;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.15);
+    text-align:center;
+}
+
+/* BOTÃO WHATS */
+.whats-btn{
+    display:block;
+    background:#25D366;
+    color:white;
+    padding:18px;
+    border-radius:10px;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:bold;
+    margin:25px 0;
+    transition:0.3s;
+}
+
+.whats-btn:hover{
+    transform:scale(1.05);
+}
+
+/* FORM */
+input{
+    width:100%;
+    padding:12px;
+    margin:8px 0;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-size:16px;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    background:#0b3d91;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#d4af37;
+}
+
+.voltar{
+    margin-top:20px;
+    display:block;
+    text-decoration:none;
+    color:#0b3d91;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>⚡ Fale com o Especialista Solar</h1>
+<p>Orçamento grátis em poucos minutos</p>
+</header>
+
+<div class="container">
+
+<h2>Atendimento rápido pelo WhatsApp</h2>
+
+<a 
+id="whatsLink"
+class="whats-btn"
+target="_blank"
+href="#">
+💬 Chamar no WhatsApp
+</a>
+
+<h3>Ou envie seus dados:</h3>
+
+<input type="text" id="nome" placeholder="Seu nome">
+<input type="text" id="cidade" placeholder="Sua cidade">
+
+<button onclick="enviarWhats()">Solicitar orçamento</button>
+
+<a href="index.html" class="voltar">⬅ Voltar para início</a>
+
+</div>
+
+<script>
+function enviarWhats(){
+
+    const nome = document.getElementById("nome").value;
+    const cidade = document.getElementById("cidade").value;
+
+    const numero = "5566992545753"; // 🔴 TROQUE PELO SEU NÚMERO
+
+    const msg = `Olá! Me chamo ${EVERTON JÓI. Sou de $ARAGARÇAS-GO e quero um orçamento de energia solar.`;
+
+    const link = `https://wa.me/${numero}?text=${encodeURIComponent(msg)}`;
+
+    window.open(link, "_blank");
+}
+</script>
+
+</body>
+</html>
