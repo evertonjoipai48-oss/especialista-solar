@@ -1,22 +1,183 @@
 
-<html><head><link rel='stylesheet' href='style.css'>
-<script>
-function filter(cat){
- document.querySelectorAll('.item').forEach(el=>{
-   el.style.display = (cat==='all'||el.dataset.cat===cat)?'block':'none';
- })
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Projetos | Especialista Solar</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#f4f7fb;
 }
-</script></head><body>
-<nav><a href="index.html">Voltar</a></nav>
-<section>
-<h2>Galeria</h2>
-<div class="filter-btns">
-<button onclick="filter('all')">Todos</button>
-<button onclick="filter('residencial')">Residencial</button>
-<button onclick="filter('comercial')">Comercial</button>
+
+/* HEADER */
+header{
+  background:#0b3d91;
+  color:white;
+  padding:18px;
+  text-align:center;
+}
+
+header a{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* TITULO */
+h1{
+  text-align:center;
+  margin:40px 0 10px;
+  color:#0b3d91;
+}
+
+/* FILTROS */
+.filtros{
+  text-align:center;
+  margin:30px 0;
+}
+
+.filtros button{
+  padding:10px 18px;
+  border:none;
+  border-radius:20px;
+  margin:5px;
+  cursor:pointer;
+  background:#ddd;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.filtros button:hover,
+.filtros .ativo{
+  background:#0b3d91;
+  color:white;
+}
+
+/* GRID */
+.galeria{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+  padding:20px;
+}
+
+.item{
+  overflow:hidden;
+  border-radius:14px;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.item img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  transition:.4s;
+}
+
+.item:hover img{
+  transform:scale(1.1);
+}
+
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+
+.modal img{
+  max-width:90%;
+  max-height:90%;
+}
+
+.fechar{
+  position:absolute;
+  top:25px;
+  right:40px;
+  color:white;
+  font-size:40px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<a href="index.html">⬅ Voltar ao início</a>
+</header>
+
+<h1>Galeria de Projetos</h1>
+
+<!-- FILTROS -->
+<div class="filtros">
+<button class="ativo" onclick="filtrar('todos',this)">Todos</button>
+<button onclick="filtrar('residencial',this)">Residencial</button>
+<button onclick="filtrar('comercial',this)">Comercial</button>
+<button onclick="filtrar('rural',this)">Rural</button>
 </div>
-<div class="grid gallery">
-<img class="item" data-cat="residencial" src="https://picsum.photos/400/300?1">
-<img class="item" data-cat="comercial" src="https://picsum.photos/400/300?2">
-<img class="item" data-cat="residencial" src="https://picsum.photos/400/300?3">
-</div></section></body></html>
+
+<!-- GALERIA -->
+<div class="galeria">
+
+<!-- TROQUE as categorias como quiser -->
+<div class="item residencial"><img src="img/1.jpg"></div>
+<div class="item residencial"><img src="img/2.jpg"></div>
+<div class="item comercial"><img src="img/3.jpg"></div>
+<div class="item comercial"><img src="img/4.jpg"></div>
+<div class="item rural"><img src="img/5.jpg"></div>
+<div class="item rural"><img src="img/6.jpg"></div>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+<span class="fechar" onclick="fechar()">×</span>
+<img id="imgGrande">
+</div>
+
+<script>
+
+/* FILTRO */
+function filtrar(cat,btn){
+  document.querySelectorAll('.item').forEach(el=>{
+    el.style.display = (cat==='todos' || el.classList.contains(cat)) ? 'block' : 'none';
+  });
+
+  document.querySelectorAll('.filtros button').forEach(b=>b.classList.remove('ativo'));
+  btn.classList.add('ativo');
+}
+
+/* MODAL */
+const modal = document.getElementById('modal');
+const imgGrande = document.getElementById('imgGrande');
+
+document.querySelectorAll('.item img').forEach(img=>{
+  img.onclick = ()=>{
+    imgGrande.src = img.src;
+    modal.style.display = 'flex';
+  }
+});
+
+function fechar(){
+  modal.style.display='none';
+}
+
+modal.onclick = ()=> fechar();
+
+</script>
+
+</body>
+</html>
