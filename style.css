@@ -52,5 +52,18 @@ to{
 opacity:1;
 transform:translateY(0);
 }
+}/* ANIMAÇÃO SUAVE */
+.fade{
+  opacity:0;
+  transform:translateY(20px);
+  animation:fade 0.8s ease forwards;
 }
+
+@keyframes fade{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
 
