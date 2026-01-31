@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,15 +11,15 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     margin:0;
-    background:#f6f8fb;
+    background:#f2f6fb;
 }
 
 /* HEADER */
 header{
     background:linear-gradient(90deg,#0b3d91,#d4af37);
     color:white;
-    padding:40px 20px;
     text-align:center;
+    padding:45px 20px;
 }
 
 header h1{
@@ -28,43 +29,36 @@ header h1{
 
 /* CONTAINER */
 .container{
-    max-width:600px;
+    max-width:1000px;
     margin:40px auto;
+    padding:20px;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.card{
     background:white;
-    padding:30px;
+    padding:25px;
     border-radius:12px;
-    box-shadow:0 6px 20px rgba(0,0,0,0.15);
-    text-align:center;
+    box-shadow:0 6px 20px rgba(0,0,0,0.12);
 }
 
-/* BOTÃO WHATS */
-.whats-btn{
-    display:block;
-    background:#25D366;
-    color:white;
-    padding:18px;
-    border-radius:10px;
-    text-decoration:none;
-    font-size:20px;
-    font-weight:bold;
-    margin:25px 0;
-    transition:0.3s;
-}
-
-.whats-btn:hover{
-    transform:scale(1.05);
-}
-
-/* FORM */
-input{
+/* INPUTS */
+input, textarea{
     width:100%;
     padding:12px;
     margin:8px 0;
     border-radius:8px;
     border:1px solid #ccc;
-    font-size:16px;
+    font-size:15px;
 }
 
+/* BUTTON */
 button{
     width:100%;
     padding:14px;
@@ -72,20 +66,60 @@ button{
     color:white;
     border:none;
     border-radius:8px;
-    font-size:16px;
     font-weight:bold;
     cursor:pointer;
+    font-size:16px;
 }
 
 button:hover{
     background:#d4af37;
 }
 
-.voltar{
-    margin-top:20px;
+/* WHATS */
+.whats-btn{
     display:block;
+    background:#25D366;
+    color:white;
+    text-align:center;
+    padding:18px;
+    border-radius:10px;
     text-decoration:none;
-    color:#0b3d91;
+    font-weight:bold;
+    font-size:18px;
+    margin-top:15px;
+}
+
+.whats-btn:hover{
+    transform:scale(1.03);
+}
+
+/* MAP */
+iframe{
+    width:100%;
+    height:320px;
+    border-radius:10px;
+    border:0;
+}
+
+/* FLOAT BUTTON */
+.float-whats{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    padding:15px 18px;
+    border-radius:50px;
+    font-weight:bold;
+    text-decoration:none;
+    box-shadow:0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* MOBILE */
+@media(max-width:800px){
+    .grid{
+        grid-template-columns:1fr;
+    }
 }
 </style>
 </head>
@@ -93,46 +127,85 @@ button:hover{
 <body>
 
 <header>
-<h1>⚡ Fale com o Especialista Solar</h1>
-<p>Orçamento grátis em poucos minutos</p>
+<h1>⚡ Fale com a Especialista Solar</h1>
+<p>Orçamento gratuito • Atendimento rápido • Energia mais barata</p>
 </header>
 
 <div class="container">
 
-<h2>Atendimento rápido pelo WhatsApp</h2>
+<div class="grid">
 
-<a 
-id="whatsLink"
-class="whats-btn"
-target="_blank"
-href="#">
-💬 Chamar no WhatsApp
-</a>
-
-<h3>Ou envie seus dados:</h3>
+<!-- FORM -->
+<div class="card">
+<h2>Solicitar Orçamento</h2>
 
 <input type="text" id="nome" placeholder="Seu nome">
 <input type="text" id="cidade" placeholder="Sua cidade">
+<input type="tel" id="telefone" placeholder="Telefone">
 
-<button onclick="enviarWhats()">Solicitar orçamento</button>
+<textarea id="msg" placeholder="Conte sua necessidade..."></textarea>
 
-<a href="index.html" class="voltar">⬅ Voltar para início</a>
+<button onclick="enviarWhats()">Enviar pelo WhatsApp</button>
 
+<a id="whatsDireto" class="whats-btn" target="_blank">
+💬 Falar direto no WhatsApp
+</a>
+
+<p style="margin-top:15px;">
+📞 <a href="tel:+5566999999999">Ligar agora</a><br>
+✉️ especialista@solar.com
+</p>
+
+<a href="index.html">⬅ Voltar para início</a>
 </div>
 
+<!-- MAPA -->
+<div class="card">
+<h2>Nossa Localização</h2>
+
+<!-- 🔴 TROQUE A CIDADE AQUI -->
+<iframe 
+src="https://www.google.com/maps?q=Barra+do+Garças+MT&output=embed">
+</iframe>
+
+<p style="margin-top:10px;">
+Atendemos toda a região com instalação residencial, rural e empresarial.
+</p>
+</div>
+
+</div>
+</div>
+
+<!-- BOTÃO FLUTUANTE -->
+<a id="whatsFloat" class="float-whats" target="_blank">
+💬 WhatsApp
+</a>
+
 <script>
+const numero = "5566999999999"; // 🔴 COLOQUE SEU WHATSAPP
+
+const linkDireto = `https://wa.me/${numero}?text=Olá! Quero orçamento de energia solar.`;
+
+document.getElementById("whatsDireto").href = linkDireto;
+document.getElementById("whatsFloat").href = linkDireto;
+
 function enviarWhats(){
 
-    const nome = document.getElementById("nome").value;
-    const cidade = document.getElementById("cidade").value;
+const nome = document.getElementById("nome").value;
+const cidade = document.getElementById("cidade").value;
+const telefone = document.getElementById("telefone").value;
+const msg = document.getElementById("msg").value;
 
-    const numero = "5566992545753"; // 🔴 TROQUE PELO SEU NÚMERO
+const texto =
+`Olá! Me chamo ${nome}
+Cidade: ${cidade}
+Telefone: ${telefone}
+Mensagem: ${msg}
+Quero orçamento de energia solar.`;
 
-    const msg = `Olá! Me chamo ${EVERTON JÓI. Sou de $ARAGARÇAS-GO e quero um orçamento de energia solar.`;
+const link = `https://wa.me/$5566992545753}?text=${encodeURIComponent(texto)}`;
 
-    const link = `https://wa.me/${numero}?text=${encodeURIComponent(msg)}`;
-
-    window.open(link, "_blank");
+window.open(link,'_blank');
 }
 </script>
 
