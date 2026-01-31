@@ -1,103 +1,212 @@
->
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Contato | Especialista Solar</title>
+
 <link rel="stylesheet" href="style.css">
 
 <style>
+
+/* ===== ESTILO PREMIUM ===== */
+
 body{
-  font-family: Arial, sans-serif;
   margin:0;
-  background:#f6f8fb;
+  font-family: Arial, Helvetica, sans-serif;
+  background:#f4f7fb;
+  color:#333;
 }
 
-header{
+/* HERO */
+.hero{
   background: linear-gradient(90deg,#0b3d91,#0d4fa6);
   color:white;
-  padding:25px;
   text-align:center;
+  padding:60px 20px;
 }
 
+.hero h1{
+  font-size:38px;
+  margin-bottom:10px;
+}
+
+.hero p{
+  font-size:18px;
+  opacity:0.9;
+}
+
+/* GRID */
 .container{
-  max-width:1100px;
+  max-width:1200px;
   margin:auto;
-  padding:40px 20px;
+  padding:50px 20px;
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:30px;
 }
 
+/* CARDS */
 .card{
   background:white;
   padding:30px;
-  border-radius:14px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  border-radius:16px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.08);
+  transition:0.3s;
 }
 
+.card:hover{
+  transform:translateY(-5px);
+}
+
+h2{
+  margin-top:0;
+  color:#0b3d91;
+}
+
+/* BOTÕES */
 .btn{
   display:inline-block;
   background:#25d366;
   color:white;
   padding:14px 22px;
-  border-radius:8px;
+  border-radius:10px;
   text-decoration:none;
   font-weight:bold;
   margin-top:15px;
 }
 
+.btn:hover{
+  opacity:0.9;
+}
+
+/* FORM */
+input, textarea{
+  width:100%;
+  padding:12px;
+  margin-top:8px;
+  margin-bottom:15px;
+  border-radius:8px;
+  border:1px solid #ddd;
+}
+
+button{
+  background:#0b3d91;
+  color:white;
+  border:none;
+  padding:12px;
+  border-radius:8px;
+  width:100%;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* MAPA */
 iframe{
   width:100%;
   height:350px;
-  border-radius:14px;
   border:none;
+  border-radius:12px;
 }
 
+/* BOTÃO FLUTUANTE */
+.whatsapp-float{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:#25d366;
+  color:white;
+  padding:18px;
+  border-radius:50%;
+  font-size:22px;
+  text-decoration:none;
+  box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* VOLTAR */
 .voltar{
   text-align:center;
-  margin-top:30px;
+  padding:30px;
 }
+
 </style>
 </head>
 
+
 <body>
 
-<header>
-<h1>Fale com o Especialista Solar ☀️</h1>
-</header>
+<!-- HERO -->
+<section class="hero">
+<h1>Fale com um Especialista Solar ☀️</h1>
+<p>Orçamento rápido • Atendimento imediato • Economia garantida</p>
+</section>
+
 
 <div class="container">
 
+<!-- CONTATO DIRETO -->
 <div class="card">
 <h2>Contato direto</h2>
 
 <p><b>📞 Telefone:</b><br>(66) 99254-5753</p>
-
 <p><b>📧 E-mail:</b><br>evertonjoipai48@gmail.com</p>
 
 <a class="btn"
-href="https://wa.me/5566992545753?text=Olá%20quero%20orçamento%20de%20energia%20solar"
+href="https://wa.me/5566992545753?text=Olá%20quero%20um%20orçamento%20de%20energia%20solar"
 target="_blank">
-💬 Falar no WhatsApp
+💬 Falar no WhatsApp agora
 </a>
 </div>
 
 
+<!-- FORMULÁRIO -->
+<div class="card">
+<h2>Solicitar orçamento</h2>
+
+<form action="https://formsubmit.co/evertonjoipai48@gmail.com" method="POST">
+
+<input type="text" name="Nome" placeholder="Seu nome" required>
+
+<input type="tel" name="Telefone" placeholder="Telefone ou WhatsApp" required>
+
+<input type="number" name="Conta" placeholder="Valor médio da conta de luz (R$)">
+
+<textarea name="Mensagem" placeholder="Escreva sua necessidade"></textarea>
+
+<button type="submit">Enviar orçamento</button>
+
+<input type="hidden" name="_next" value="https://evertonjoipai48-oss.github.io/especialista-solar/contato.html">
+
+</form>
+</div>
+
+
+<!-- MAPA -->
 <div class="card">
 <h2>Localização</h2>
 
 <iframe
 src="https://www.google.com/maps?q=Barra+do+Garças+MT&output=embed">
 </iframe>
+
 </div>
 
 </div>
+
 
 <div class="voltar">
-<a href="index.html">⬅ Voltar ao site</a>
+<a href="index.html">⬅ Voltar ao início</a>
 </div>
+
+
+<!-- BOTÃO FLUTUANTE -->
+<a class="whatsapp-float"
+href="https://wa.me/5566992545753"
+target="_blank">
+💬
+</a>
 
 </body>
 </html>
