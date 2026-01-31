@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Projetos Realizados</h1>
+<div class="galeria" id="galeria"></div>
+
+<script>
+const g=document.getElementById('galeria');
+for(let i=1;i<=30;i++){
+ let img=document.createElement('img');
+ img.src='img/'+i+'.jpg';
+ img.onerror=()=>img.remove();
+ g.appendChild(img);
+}
+</script>
+
+<a href="index.html">Voltar</a>
+</body>
+</html>
