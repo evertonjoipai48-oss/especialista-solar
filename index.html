@@ -81,13 +81,18 @@ section{
   <img src="https://images.unsplash.com/...">
 
 
+}.gallery img{
+  width:100%;
+  border-radius:12px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor:pointer;
 }
-<div class="gallery">
-  <img src="img/projeto1.jpg">
-  <img src="img/projeto2.jpg">
-  <img src="img/projeto3.jpg">
-  <img src="img/projeto4.jpg">
-</div>
+
+.gallery img:hover{
+  transform: scale(1.08);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+}
+}
 
 
 
