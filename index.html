@@ -2,176 +2,201 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Especialista Solar | Energia Solar Fotovoltaica</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Especialista Solar | Energia Solar Profissional</title>
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:#0b1c2d;
+      color:#fff;
+    }
 
-<style>
+    header{
+      background:linear-gradient(90deg,#0b1c2d,#123b5c);
+      padding:20px;
+      text-align:center;
+    }
 
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:#f4f7fb;
-}
+    header h1{
+      color:#ffd700;
+      margin:0;
+      font-size:32px;
+    }
 
-/* NAVBAR */
-header{
-  background:#0b3d91;
-  padding:18px;
-  text-align:center;
-  color:white;
-}
+    .hero{
+      padding:80px 20px;
+      text-align:center;
+      background:linear-gradient(180deg,#123b5c,#0b1c2d);
+    }
 
-header a{
-  color:white;
-  margin:0 14px;
-  text-decoration:none;
-  font-weight:bold;
-}
+    .hero h2{
+      font-size:40px;
+      color:#ffd700;
+    }
 
-/* HERO */
-.hero{
-  background:linear-gradient(120deg,#0b3d91,#0d4fa6);
-  color:white;
-  text-align:center;
-  padding:110px 20px;
-}
+    .btn{
+      background:#ffd700;
+      color:#000;
+      padding:14px 28px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:bold;
+      display:inline-block;
+      margin-top:20px;
+    }
 
-.hero h1{
-  font-size:42px;
-}
+    section{
+      padding:60px 20px;
+      text-align:center;
+    }
 
-.btn{
-  background:#25d366;
-  padding:16px 28px;
-  border-radius:10px;
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-  display:inline-block;
-  margin-top:25px;
-}
+    .cards{
+      display:flex;
+      flex-wrap:wrap;
+      gap:20px;
+      justify-content:center;
+    }
 
-/* SEÇÕES */
-section{
-  padding:80px 20px;
-  text-align:center;
-}
+    .card{
+      background:#123b5c;
+      padding:25px;
+      border-radius:12px;
+      width:280px;
+    }
 
-h2{
-  color:#0b3d91;
-  margin-bottom:40px;
-}
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:15px;
+    }
 
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-  max-width:1100px;
-  margin:auto;
-}
+    .gallery img{
+      width:100%;
+      border-radius:10px;
+    }
 
-.card{
-  background:white;
-  padding:25px;
-  border-radius:14px;
-  box-shadow:0 10px 25px rgba(0,0,0,.1);
-}
+    .counter{
+      font-size:48px;
+      color:#ffd700;
+      font-weight:bold;
+    }
 
-/* NÚMEROS */
-.stats{
-  display:flex;
-  justify-content:center;
-  gap:60px;
-  flex-wrap:wrap;
-  font-size:26px;
-  font-weight:bold;
-}
+    input,button{
+      padding:12px;
+      margin:8px;
+      border-radius:8px;
+      border:none;
+    }
 
-/* WHATSAPP */
-.whatsapp{
-  position:fixed;
-  bottom:25px;
-  right:25px;
-  background:#25d366;
-  padding:18px;
-  border-radius:50%;
-  color:white;
-  font-size:22px;
-  text-decoration:none;
-}
+    button{
+      background:#ffd700;
+      font-weight:bold;
+      cursor:pointer;
+    }
 
-footer{
-  background:#0b3d91;
-  color:white;
-  padding:25px;
-  margin-top:40px;
-}
+    footer{
+      background:#08131f;
+      padding:25px;
+      font-size:14px;
+    }
 
-</style>
+    .whatsapp{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#25d366;
+      color:#fff;
+      padding:15px 18px;
+      border-radius:50px;
+      font-weight:bold;
+      text-decoration:none;
+      font-size:14px;
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-<a href="index.html">Início</a>
-<a href="projetos.html">Projetos</a>
-<a href="vendas.html">Orçamento</a>
-<a href="contato.html">Contato</a>
+  <h1>☀️ ESPECIALISTA SOLAR</h1>
+  <p>Economize até 95% na conta de luz</p>
 </header>
 
-
-<!-- HERO -->
 <section class="hero">
-<h1>Economize até 95% na conta de luz ☀️</h1>
-<p>Instalação profissional de energia solar residencial e comercial</p>
-<a class="btn" href="vendas.html">Solicitar Orçamento Gratuito</a>
+  <h2>Sua conta de luz quase ZERO começa hoje</h2>
+  <p>Instalação profissional • Garantia • Atendimento rápido</p>
+  <a class="btn" href="#orcamento">Solicitar Orçamento Grátis</a>
 </section>
 
-
-<!-- AUTORIDADE -->
 <section>
-<h2>Nossa experiência</h2>
-
-<div class="stats">
-<div>+100 Projetos</div>
-<div>+90% Economia</div>
-<div>100% Garantia</div>
-</div>
+  <h2>Resultados Comprovados</h2>
+  <div class="counter">+100 Projetos Instalados</div>
 </section>
 
-
-<!-- SERVIÇOS -->
 <section>
-<h2>Nossos Serviços</h2>
-
-<div class="grid">
-<div class="card">Projeto Solar Residencial</div>
-<div class="card">Instalação Comercial</div>
-<div class="card">Manutenção</div>
-<div class="card">Monitoramento</div>
-</div>
+  <h2>Nossos Serviços</h2>
+  <div class="cards">
+    <div class="card">Instalação residencial</div>
+    <div class="card">Instalação comercial</div>
+    <div class="card">Manutenção</div>
+    <div class="card">Homologação na concessionária</div>
+  </div>
 </section>
 
-
-<!-- CTA -->
 <section>
-<h2>Pronto para reduzir sua conta?</h2>
-<a class="btn" href="https://wa.me/5566992545753" target="_blank">
-Falar com Especialista
-</a>
+  <h2>Projetos Realizados</h2>
+
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231">
+    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89f1b6">
+    <img src="https://images.unsplash.com/photo-1592833159119-c7d1d57b3bb3">
+    <img src="https://images.unsplash.com/photo-1604004555489-723a93d6ce74">
+  </div>
 </section>
 
+<section>
+  <h2>O que nossos clientes dizem</h2>
+  <div class="cards">
+    <div class="card">⭐⭐⭐⭐⭐<br>Minha conta caiu de 800 para 80 reais!</div>
+    <div class="card">⭐⭐⭐⭐⭐<br>Instalação rápida e atendimento excelente.</div>
+    <div class="card">⭐⭐⭐⭐⭐<br>Melhor investimento que fiz!</div>
+  </div>
+</section>
+
+<section>
+  <h2>Calculadora Solar</h2>
+  <input id="conta" type="number" placeholder="Sua conta de luz (R$)">
+  <button onclick="calcular()">Calcular economia</button>
+  <p id="resultado"></p>
+</section>
+
+<section id="orcamento">
+  <h2>Solicite seu Orçamento</h2>
+  <input placeholder="Seu nome">
+  <input placeholder="WhatsApp">
+  <input placeholder="Cidade">
+  <button>Enviar</button>
+</section>
 
 <footer>
-📞 (66) 99254-5753 • ✉ evertonjoipai48@gmail.com  
-<br>
-© Especialista Solar
+  © 2026 Especialista Solar • Everton Joi • Energia Solar Fotovoltaica
 </footer>
 
-<a class="whatsapp" href="https://wa.me/5566992545753" target="_blank">💬</a>
+<a class="whatsapp" href="https://wa.me/5566999999999" target="_blank">
+  WhatsApp
+</a>
+
+<script>
+function calcular(){
+  let conta = document.getElementById("conta").value;
+  let economia = conta * 0.9;
+  document.getElementById("resultado").innerText =
+  "Você pode economizar aproximadamente R$ " + economia.toFixed(2) + " por mês!";
+}
+</script>
 
 </body>
 </html>
