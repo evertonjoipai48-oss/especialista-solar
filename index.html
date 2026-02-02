@@ -3,27 +3,32 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Especialista Solar | Energia Solar</title>
+<title>Especialista Solar | Everton Joi</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 
 body{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
   background:#0b1c2d;
   color:#fff;
 }
 
 header{
   background:#0f2e4a;
-  padding:20px;
+  padding:15px;
   text-align:center;
+}
+
+.logo{
+  width:140px;
+  margin-bottom:8px;
 }
 
 header h1{
   color:#FFD700;
-  font-size:30px;
+  font-size:22px;
 }
 
 .hero{
@@ -33,20 +38,19 @@ header h1{
 }
 
 .hero h2{
-  font-size:38px;
+  font-size:36px;
   color:#FFD700;
-  margin-bottom:15px;
 }
 
 .btn{
   background:#FFD700;
   color:#000;
   padding:15px 30px;
-  border-radius:8px;
+  border-radius:10px;
   text-decoration:none;
   font-weight:bold;
   display:inline-block;
-  margin-top:20px;
+  margin-top:25px;
 }
 
 section{
@@ -69,12 +73,11 @@ section{
 }
 
 .counter{
-  font-size:52px;
+  font-size:50px;
   color:#FFD700;
   font-weight:bold;
 }
 
-/* GALERIA SOMENTE SOLAR */
 .gallery{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -110,10 +113,10 @@ footer{
   bottom:20px;
   right:20px;
   background:#25D366;
-  padding:15px 20px;
+  padding:16px 22px;
   border-radius:50px;
   text-decoration:none;
-  color:white;
+  color:#fff;
   font-weight:bold;
 }
 </style>
@@ -122,18 +125,21 @@ footer{
 <body>
 
 <header>
-  <h1>☀️ ESPECIALISTA SOLAR</h1>
-  <p>Economize até 95% na conta de luz</p>
+  <img src="img/logo.png" class="logo">
+  <h1>Especialista Solar • Everton Joi</h1>
+  <p>📞 (66) 99254-5753</p>
 </header>
 
 <section class="hero">
-  <h2>Sua conta de luz quase ZERO começa hoje</h2>
-  <p>Instalação rápida • Garantia • Atendimento profissional</p>
-  <a class="btn" href="#orcamento">Pedir Orçamento Grátis</a>
+  <h2>Economize até 95% na conta de luz</h2>
+  <p>Instalação profissional • Garantia • Atendimento rápido</p>
+  <a class="btn" href="https://wa.me/5566992545753" target="_blank">
+    Falar no WhatsApp
+  </a>
 </section>
 
 <section>
-  <h2>Resultados Comprovados</h2>
+  <h2>Resultados</h2>
   <div class="counter">+100 Projetos Instalados</div>
 </section>
 
@@ -147,47 +153,31 @@ footer{
   </div>
 </section>
 
-<!-- GALERIA APENAS ENERGIA SOLAR -->
 <section>
   <h2>Projetos Realizados</h2>
 
   <div class="gallery">
     <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231">
-    <img src="https://images.unsplash.com/photo-1592833159119-c7d1d57b3bb3">
     <img src="https://images.unsplash.com/photo-1604004555489-723a93d6ce74">
+    <img src="https://images.unsplash.com/photo-1592833159119-c7d1d57b3bb3">
     <img src="https://images.unsplash.com/photo-1581094794329-c8112a89f1b6">
   </div>
 </section>
 
 <section>
-  <h2>Depoimentos</h2>
-  <div class="cards">
-    <div class="card">⭐⭐⭐⭐⭐<br>Conta caiu de R$900 para R$80</div>
-    <div class="card">⭐⭐⭐⭐⭐<br>Instalação rápida e organizada</div>
-    <div class="card">⭐⭐⭐⭐⭐<br>Empresa muito confiável</div>
-  </div>
-</section>
-
-<section>
   <h2>Calculadora Solar</h2>
-  <input id="conta" type="number" placeholder="Sua conta (R$)">
+  <input id="conta" type="number" placeholder="Valor da conta (R$)">
   <button onclick="calc()">Calcular Economia</button>
   <p id="res"></p>
 </section>
 
-<section id="orcamento">
-  <h2>Solicite seu Orçamento</h2>
-  <input placeholder="Nome">
-  <input placeholder="WhatsApp">
-  <input placeholder="Cidade">
-  <button>Enviar</button>
-</section>
-
 <footer>
-  © 2026 Especialista Solar • Everton Joi • Energia Solar Fotovoltaica
+  <img src="img/logo.png" style="width:80px"><br><br>
+  © 2026 Especialista Solar • Everton Joi<br>
+  WhatsApp: (66) 99254-5753 • Aragarças Goiás
 </footer>
 
-<a class="whatsapp" href="https://wa.me/5566999999999" target="_blank">
+<a class="whatsapp" href="https://wa.me/5566992545753" target="_blank">
   WhatsApp
 </a>
 
