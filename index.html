@@ -1,17 +1,3 @@
-<!-- GALERIA PROJETOS -->
-<section class="projetos">
-  <h2>Projetos Realizados</h2>
-  <div class="galeria">
-
-    <img src="images/projeto1.jpg" alt="Projeto Solar 1">
-    <img src="images/projeto2.jpg" alt="Projeto Solar 2">
-    <img src="images/projeto3.jpg" alt="Projeto Solar 3">
-    <img src="images/projeto4.jpg" alt="Projeto Solar 4">
-    <img src="images/projeto5.jpg" alt="Projeto Solar 5">
-    <img src="images/projeto6.jpg" alt="Projeto Solar 6">
-
-  </div>
-</section>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -29,6 +15,7 @@ body{
   color:#fff;
 }
 
+/* HEADER */
 header{
   background:#0f2e4a;
   padding:15px;
@@ -37,41 +24,53 @@ header{
 
 .logo{
   width:140px;
-  margin-bottom:8px;
 }
 
-header h1{
-  color:#FFD700;
-  font-size:22px;
-}
-
+/* HERO COM FOTO REAL */
 .hero{
-  padding:90px 20px;
-  text-align:center;
-  background:linear-gradient(180deg,#123b5c,#0b1c2d);
+  position:relative;
+  height:90vh;
+  overflow:hidden;
 }
 
-.hero h2{
-  font-size:36px;
+.hero img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:brightness(0.65);
+}
+
+.hero-text{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  text-align:center;
+}
+
+.hero-text h1{
+  font-size:44px;
   color:#FFD700;
 }
 
 .btn{
   background:#FFD700;
   color:#000;
-  padding:15px 30px;
+  padding:14px 28px;
   border-radius:10px;
   text-decoration:none;
   font-weight:bold;
   display:inline-block;
-  margin-top:25px;
+  margin-top:20px;
 }
 
+/* SECTIONS */
 section{
   padding:70px 20px;
   text-align:center;
 }
 
+/* CARDS */
 .cards{
   display:flex;
   flex-wrap:wrap;
@@ -86,49 +85,26 @@ section{
   width:260px;
 }
 
-.counter{
-  font-size:50px;
-  color:#FFD700;
-  font-weight:bold;
+/* GALERIA */
+.galeria{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:18px;
+  margin-top:30px;
 }
-<div class="gallery">
-  <img src="https://images.unsplash.com/...">
 
-
-}.gallery img{
+.galeria img{
   width:100%;
   border-radius:12px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition:.3s;
   cursor:pointer;
 }
 
-.gallery img:hover{
-  transform: scale(1.08);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
-}
+.galeria img:hover{
+  transform:scale(1.05);
 }
 
-
-
-input,button{
-  padding:12px;
-  margin:8px;
-  border-radius:8px;
-  border:none;
-}
-
-button{
-  background:#FFD700;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-footer{
-  background:#08131f;
-  padding:25px;
-  font-size:14px;
-}
-
+/* WHATSAPP */
 .whatsapp{
   position:fixed;
   bottom:20px;
@@ -140,51 +116,61 @@ footer{
   color:#fff;
   font-weight:bold;
 }
+
+/* FOOTER */
+footer{
+  background:#08131f;
+  padding:25px;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-  <img src="img/logo.png" class="logo">
-  <h1>Especialista Solar • Everton Joi</h1>
+  <img src="images/logo.png" class="logo">
+  <h2>Especialista Solar • Everton Joi</h2>
   <p>📞 (66) 99254-5753</p>
 </header>
 
+<!-- HERO COM SUA FOTO -->
 <section class="hero">
-  <h2>Economize até 95% na conta de luz</h2>
-  <p>Instalação profissional • Garantia • Atendimento rápido</p>
-  <a class="btn" href="https://wa.me/5566992545753" target="_blank">
-    Falar no WhatsApp
-  </a>
+  <img src="images/banner.jpg">
+
+  <div class="hero-text">
+    <h1>Economize até 95% na conta de luz</h1>
+    <p>Instalação profissional • Garantia • Atendimento rápido</p>
+
+    <a class="btn" href="https://wa.me/5566992545753" target="_blank">
+      Solicitar Orçamento
+    </a>
+  </div>
 </section>
 
-<section>
-  <h2>Resultados</h2>
-  <div class="counter">+100 Projetos Instalados</div>
-</section>
-
+<!-- SERVIÇOS -->
 <section>
   <h2>Nossos Serviços</h2>
   <div class="cards">
     <div class="card">Instalação Residencial</div>
     <div class="card">Instalação Comercial</div>
     <div class="card">Manutenção</div>
-    <div class="card">Homologação na Concessionária</div>
+    <div class="card">Homologação</div>
   </div>
 </section>
 
+<!-- GALERIA REAL -->
 <section>
   <h2>Projetos Realizados</h2>
 
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231">
-    <img src="https://images.unsplash.com/photo-1604004555489-723a93d6ce74">
-    <img src="https://images.unsplash.com/photo-1592833159119-c7d1d57b3bb3">
-    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89f1b6">
+  <div class="galeria">
+    <img src="images/projeto1.jpg">
+    <img src="images/projeto2.jpg">
+    <img src="images/projeto3.jpg">
+    <img src="images/projeto4.jpg">
   </div>
 </section>
 
+<!-- CALCULADORA -->
 <section>
   <h2>Calculadora Solar</h2>
   <input id="conta" type="number" placeholder="Valor da conta (R$)">
@@ -193,9 +179,7 @@ footer{
 </section>
 
 <footer>
-  <img src="img/logo.png" style="width:80px"><br><br>
-  © 2026 Especialista Solar • Everton Joi<br>
-  WhatsApp: (66) 99254-5753 • Aragarças Goiás
+  © 2026 Especialista Solar • Everton Joi
 </footer>
 
 <a class="whatsapp" href="https://wa.me/5566992545753" target="_blank">
