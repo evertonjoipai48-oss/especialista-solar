@@ -1,26 +1,21 @@
 
-
-<style>
-
-/* RESET */
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-  font-family:Arial, Helvetica, sans-serif;
   background:linear-gradient(180deg,#0b1c2d,#08131f);
   color:#fff;
 }
 
-
-/* ===== HEADER PREMIUM ===== */
+/* HEADER */
 .topo{
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   gap:20px;
   background:linear-gradient(90deg,#0f2e4a,#123b5c);
   padding:18px;
@@ -29,15 +24,9 @@ body{
 
 .logo{
   width:150px;
-  filter:drop-shadow(0 0 10px rgba(255,215,0,.6));
 }
 
-.topo-texto h2{
-  font-size:22px;
-}
-
-
-/* ===== HERO CINEMÁTICO ===== */
+/* HERO */
 .hero{
   position:relative;
   height:95vh;
@@ -49,7 +38,7 @@ body{
   height:100%;
   object-fit:cover;
   filter:brightness(.55);
-  animation:zoom 14s infinite alternate ease-in-out;
+  animation:zoom 14s infinite alternate;
 }
 
 @keyframes zoom{
@@ -66,37 +55,24 @@ body{
 }
 
 .hero-text h1{
-  font-size:50px;
+  font-size:48px;
   color:#FFD700;
-  margin-bottom:10px;
+  margin-bottom:20px;
 }
 
-.hero-text p{
-  font-size:18px;
-  opacity:.9;
-}
-
-
-/* ===== BOTÃO PREMIUM ===== */
+/* BOTÃO */
 .btn{
   background:linear-gradient(45deg,#FFD700,#ffb300);
-  padding:16px 32px;
+  color:#000;
+  padding:14px 28px;
+  border:none;
   border-radius:12px;
   font-weight:bold;
-  color:#000;
+  cursor:pointer;
   text-decoration:none;
-  display:inline-block;
-  margin-top:25px;
-  box-shadow:0 8px 25px rgba(255,215,0,.4);
-  transition:.3s;
 }
 
-.btn:hover{
-  transform:scale(1.08);
-}
-
-
-/* ===== SECTIONS ===== */
+/* SEÇÕES */
 section{
   padding:80px 20px;
   text-align:center;
@@ -104,11 +80,10 @@ section{
 
 .titulo{
   font-size:32px;
-  margin-bottom:35px;
+  margin-bottom:40px;
 }
 
-
-/* ===== CARDS ===== */
+/* CARDS */
 .cards{
   display:flex;
   flex-wrap:wrap;
@@ -122,17 +97,14 @@ section{
   border-radius:18px;
   width:260px;
   font-weight:bold;
-  box-shadow:0 10px 30px rgba(0,0,0,.4);
   transition:.3s;
 }
 
 .card:hover{
   transform:translateY(-10px);
-  background:#1b4d75;
 }
 
-
-/* ===== GALERIA ===== */
+/* GALERIA */
 .galeria{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -142,16 +114,9 @@ section{
 .galeria img{
   width:100%;
   border-radius:15px;
-  transition:.4s;
-  box-shadow:0 8px 20px rgba(0,0,0,.5);
 }
 
-.galeria img:hover{
-  transform:scale(1.05);
-}
-
-
-/* ===== WHATSAPP PULSANTE ===== */
+/* WHATSAPP */
 .whatsapp{
   position:fixed;
   bottom:20px;
@@ -159,24 +124,7 @@ section{
   background:#25D366;
   padding:18px 24px;
   border-radius:50px;
-  text-decoration:none;
   color:#fff;
+  text-decoration:none;
   font-weight:bold;
-  animation:pulse 1.6s infinite;
 }
-
-@keyframes pulse{
-  0%{box-shadow:0 0 0 0 rgba(37,211,102,.7)}
-  70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}
-  100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}
-}
-
-
-/* ===== FOOTER ===== */
-footer{
-  background:#08131f;
-  padding:30px;
-  margin-top:60px;
-}
-
-</style>
